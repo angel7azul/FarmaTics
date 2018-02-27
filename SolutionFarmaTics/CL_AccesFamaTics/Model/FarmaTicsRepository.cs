@@ -50,10 +50,41 @@ namespace CL_AccesFamaTics.Model
             Save();
         }
 
-        public void Remove(Producto p)
+        public void Delete(Producto p)
         {
             db.Productos.Remove(p);
             Save();
+        }
+        #endregion
+
+        #region Venta
+        public IQueryable<Venta> GetAllVentas()
+        {
+            return db.Ventas;
+        }
+
+        public Venta GetVentaById(int id)
+        {
+            return db.Ventas.Find(id);
+        }
+
+        public void Add(Venta nv)
+        {
+            db.Ventas.Add(nv);
+            Save();
+        }
+
+        public void Delete (Venta ov)
+        {
+            db.Ventas.Remove(ov);
+            Save();
+        }
+        #endregion
+
+        #region Detalle Venta
+        public IQueryable<DetalleVenta> GetAllDetalleVenta()
+        {
+            return db.DetalleVentas;
         }
         #endregion
 
