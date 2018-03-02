@@ -8,6 +8,7 @@ namespace CL_AccesFamaTics.Model
 {
     public class FarmaTicsRepository
     {
+        //Aplicacion pro GitHub
         private readonly FARMATICSEntities db = new FARMATICSEntities();
 
         #region Cliente
@@ -31,6 +32,16 @@ namespace CL_AccesFamaTics.Model
         {
             db.Clientes.Remove(oc);
         }
+
+        //Personas que se registraron el mismo dia
+        public IQueryable<Cliente> GetCustomersByRegisterDate(DateTime FR)
+        {
+            var query = from c in db.Clientes
+                        where c.FechaDeRegistro.Value.Date == FR.Date
+                        select c;
+            return query;
+        }       
+
         #endregion
 
         #region Producto
@@ -54,6 +65,30 @@ namespace CL_AccesFamaTics.Model
         {
             db.Productos.Remove(p);
             Save();
+        }
+        //Listar todos los productos que pertenecen a una categoria
+        public IQueryable<Producto> GetProductsByCategoryName(string nomCat)
+        {
+            var query = from p in db.Productos
+                        where p.Categoria.Nombre == nomCat
+                        select p;
+            return query;
+        }
+        //Lista de los nombres de productos que caducan este mes
+        public IQueryable<string>  GetProductsCaducados()
+        {
+            var query = from p in db.Productos
+                        where p.Caducidad.Date.Month == DateTime.Today.Month
+                        select p.Nombre;
+            return query;
+        }
+        //cuantos Productos con menos de 10 existencias
+        public int ProductsByAvaliable()
+        {
+            var query = (from p in db.Productos
+                        where p.Stock < 10
+                        select p).Count();
+            return query;
         }
         #endregion
 
@@ -122,6 +157,15 @@ namespace CL_AccesFamaTics.Model
         {
             db.Empleados.Remove(np);
             Save();
+        }
+
+        //Dar regalo a los que cumplan años este mes nombre y telefono
+        public List<dynamic> GetCustomersBirthDay()
+        {
+            var query = from e in db.Empleados
+                        where e.FechaNacimiento.Value.Month == DateTime.Today.Month
+                        select new { Nom = e.Nombre, Tel = e.Telefono };
+            return query.ToList<dynamic>();
         }
         #endregion
 

@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\FarmaTicsController.cs" />
     <Compile Include="Model\Categoria.cs">
       <DependentUpon>ModelFarmaTics.tt</DependentUpon>
     </Compile>
@@ -88,9 +89,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <EntityDeploy Include="Model\ModelFarmaTics.edmx">
