@@ -40,8 +40,29 @@ namespace CL_AccesFamaTics.Model
                         where c.FechaDeRegistro.Value.Date == FR.Date
                         select c;
             return query;
-        }       
-
+        }      
+        
+        //Nombre y telefono por fecha de registro
+        public List<dynamic> GetCustomerByHireDate(DateTime f)
+        {
+            var q = from emp in db.Clientes
+                    where emp.FechaDeRegistro.Value.Date == f.Date
+                    select new { Nombre = emp.Nombre, Telefono = emp.Telefono };
+            return q.ToList<dynamic>();
+        }
+        //Todos los datos del cleinte por fecha de registro
+        public IQueryable<Cliente> GetAllCustomersByHireDate(DateTime f)
+        {
+            var q = from c in db.Clientes
+                    where c.FechaDeRegistro.Value.Date == f.Date
+                    select c;
+            return q;
+        }
+        //Historial de compras de un cliente
+        public ICollection<Venta> GetCustomerBySale(int id)
+        {
+            return db.Clientes.Find(id).Ventas;
+        }
         #endregion
 
         #region Producto
@@ -75,20 +96,32 @@ namespace CL_AccesFamaTics.Model
             return query;
         }
         //Lista de los nombres de productos que caducan este mes
-        public IQueryable<string>  GetProductsCaducados()
+        public List<dynamic>  GetProductsCaducados()
         {
             var query = from p in db.Productos
                         where p.Caducidad.Date.Month == DateTime.Today.Month
-                        select p.Nombre;
-            return query;
+                        select new { Nombre = p.Nombre, FechaDeCaducidad = p.Caducidad };
+            return query.ToList<dynamic>();
         }
-        //cuantos Productos con menos de 10 existencias
-        public int ProductsByAvaliable()
+        //Productos con su nombre mediante su presentacion
+        public IQueryable<dynamic> GetProductByPresentation(string nom)
         {
-            var query = (from p in db.Productos
-                        where p.Stock < 10
-                        select p).Count();
-            return query;
+            return db.Productos.Where(p => p.Nombre.Equals(nom)&&p.Stock>10).Select(p => new { Nombre = p.Nombre,Presentacion = p.Categoria.Presentacion });
+        }
+        //Cuantos Productos con menos de 10 existencias y su nombre
+        public IQueryable<dynamic> ProductsByAvaliable()
+        {
+            return db.Productos.Where(p => p.Stock < 10).Select(p => new { Nombre = p.Nombre,Cantidad = p.Stock });
+        }
+        //Busqueda de producto por codigo de barra
+        public Producto ProductByCodigoBarra(string cod)
+        {
+            return db.Productos.FirstOrDefault(p => p.CodigoBarras.Equals(cod));
+        }
+        //Lista de productos por laboratorio
+        public IQueryable<Producto> GetProductsByLaboratory(string lab)
+        {
+            return db.Productos.Where(p => p.Laboratorio.Equals(lab));
         }
         #endregion
 
@@ -166,6 +199,22 @@ namespace CL_AccesFamaTics.Model
                         where e.FechaNacimiento.Value.Month == DateTime.Today.Month
                         select new { Nom = e.Nombre, Tel = e.Telefono };
             return query.ToList<dynamic>();
+        }
+        //Empleado por fecha de contratacion
+        public IQueryable<Empleado> GetEmployeeByHireDate(DateTime f)
+        {
+            var q = from emp in db.Empleados
+                    where emp.FechaContratacion.Date == f.Date
+                    select emp;
+            return q;
+        }
+        //Empleados por cumpleannos nombre y fecha de nac
+        public List<dynamic> GetEmployeeByBirthDay()
+        {
+            var q = from emp in db.Empleados
+                    where emp.FechaNacimiento.Value.Month == DateTime.Today.Month
+                    select new { Nombre = emp.Nombre, Fecha = emp.FechaNacimiento };
+            return q.ToList<dynamic>();
         }
         #endregion
 
