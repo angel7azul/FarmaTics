@@ -191,7 +191,11 @@ namespace CL_AccesFamaTics.Model
             db.Empleados.Remove(np);
             Save();
         }
-
+        //LOGIN
+        public Empleado Login(string user, string password)
+        {
+            return db.Empleados.FirstOrDefault(e => e.Nombre.Equals(user) && e.Contraseña.Equals(password));
+        }
         //Dar regalo a los que cumplan años este mes nombre y telefono
         public List<dynamic> GetCustomersBirthDay()
         {
@@ -228,12 +232,12 @@ namespace CL_AccesFamaTics.Model
         {
             return db.Categorias.Find(id);
         }
-        public void add(Categoria np)
+        public void Add(Categoria np)
         {
             db.Categorias.Add(np);
             Save();
         }
-        public void Remove(Categoria np)
+        public void Delete(Categoria np)
         {
             db.Categorias.Remove(np);
             Save();
