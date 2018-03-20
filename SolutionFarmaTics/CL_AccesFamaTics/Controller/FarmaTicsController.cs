@@ -146,13 +146,91 @@ namespace CL_AccesFamaTics.Controller
         {
             return repository.GetAllDetalleVenta().ToList();
         }
+
+        public DetalleVenta ObtenerDetalleVentaPorID(int id)
+        {
+            return repository.GetVentaDetailById(id);
+        }
+
+        public void Agregar(DetalleVenta dv)
+        {
+            repository.Add(dv);
+        }
+        public void Eliminar(DetalleVenta dv)
+        {
+            repository.Delete(dv);
+        }
         #endregion
 
         #region Empleado
+        public List<Empleado> BuscarTodosLosEmpleados()
+        {
+            return repository.GetallEmployee().ToList();
+        }
+
+        public Empleado AgreEmpleadoPorID(int id)
+        {
+            return repository.GetEmployeeById(id);
+        }
+
+        public void Agregar(Empleado emp)
+        {
+            repository.Add(emp);
+        }
+
+        public void Eliminar(Empleado emp)
+        {
+            repository.Delete(emp);
+        }
+
+        //LOGIN
+        public Empleado Login(string pass, string user)
+        {
+            return repository.Login(user, pass);
+        }
+
+        //Dar regalo a los que cumplan años este mes nombre y telefono
+        public List<dynamic> EmpleadosBirthDayEsteMes()
+        {
+            return repository.GetCustomersBirthDayThisMonth();
+        }
+
+        //Empleado por fecha de contratacion
+        public List<Empleado> EmpleadoPorFechaContratacion(DateTime f)
+        {
+            return repository.GetEmployeeByHireDate(f).ToList();
+        }
+
+        //Empleados por cumpleannos nombre y fecha de nac
+        public List<dynamic> EmpleadosPorFechaDeCumple()
+        {
+            return repository.GetEmployeeByBirthDay();
+        }
+
 
         #endregion
 
         #region Categoria
+
+        public List<Categoria> TodasLasCategorias()
+        {
+            return repository.GetallCategory().ToList();
+        }
+
+        public Categoria CategoriaPorID(int id)
+        {
+            return repository.GetCategoryById(id);
+        }
+
+        public void Agregar(Categoria cat)
+        {
+            repository.Add(cat);
+        }
+
+        public void Eliminar(Categoria cat)
+        {
+            repository.Delete(cat);
+        }
 
         #endregion
 

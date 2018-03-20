@@ -197,7 +197,7 @@ namespace CL_AccesFamaTics.Model
             return db.Empleados.FirstOrDefault(e => e.Nombre.Equals(user) && e.Contraseña.Equals(password));
         }
         //Dar regalo a los que cumplan años este mes nombre y telefono
-        public List<dynamic> GetCustomersBirthDay()
+        public List<dynamic> GetCustomersBirthDayThisMonth()
         {
             var query = from e in db.Empleados
                         where e.FechaNacimiento.Value.Month == DateTime.Today.Month
