@@ -168,7 +168,7 @@ namespace CL_AccesFamaTics.Controller
             return repository.GetallEmployee().ToList();
         }
 
-        public Empleado AgreEmpleadoPorID(int id)
+        public Empleado ObtenerEmpleadoPorID(int id)
         {
             return repository.GetEmployeeById(id);
         }

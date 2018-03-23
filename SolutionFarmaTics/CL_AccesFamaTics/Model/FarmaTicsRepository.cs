@@ -192,9 +192,9 @@ namespace CL_AccesFamaTics.Model
             Save();
         }
         //LOGIN
-        public Empleado Login(string user, string password)
+        public Empleado Login(string password,string user)
         {
-            return db.Empleados.FirstOrDefault(e => e.Nombre.Equals(user) && e.Contraseña.Equals(password));
+            return db.Empleados.FirstOrDefault(e => e.Usuario.Equals(user) && e.Contraseña.Equals(password));
         }
         //Dar regalo a los que cumplan años este mes nombre y telefono
         public List<dynamic> GetCustomersBirthDayThisMonth()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFA_FarmaTics.View;
 
 namespace WFA_FarmaTics
 {
@@ -16,7 +17,7 @@ namespace WFA_FarmaTics
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FRM_Login());
         }
     }
 }
