@@ -116,6 +116,11 @@ namespace CL_AccesFamaTics.Controller
         {
             return repository.GetProductsByLaboratory(nomLab).ToList();
         }
+        //Obtener lista de prouctos por el nombre
+        public List<Producto> ObtenerPorductoPorNombre(string nom)
+        {
+            return repository.GetProductsByName(nom).ToList();
+        }
         #endregion
 
         #region Venta
