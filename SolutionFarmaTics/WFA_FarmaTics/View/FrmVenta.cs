@@ -20,6 +20,8 @@ namespace WFA_FarmaTics.View
             InitializeComponent();
         }
 
+        int edad = 0;
+
         private void FrmVenta_Load(object sender, EventArgs e)
         {
 
