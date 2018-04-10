@@ -123,6 +123,11 @@ namespace CL_AccesFamaTics.Model
         {
             return db.Productos.Where(p => p.Laboratorio.Equals(lab));
         }
+        //Todos los productos por el nombre
+        public IQueryable<Producto> GetProductsByName(string nombre)
+        {
+            return db.Productos.Where(p => p.Nombre.ToLower().Contains(nombre.ToLower()));
+        }
         #endregion
 
         #region Venta
