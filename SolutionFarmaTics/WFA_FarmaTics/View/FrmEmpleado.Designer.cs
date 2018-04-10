@@ -46,15 +46,6 @@
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.dgv_TodosEmpleados = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaHireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TodosEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,65 +210,10 @@
             // dgv_TodosEmpleados
             // 
             this.dgv_TodosEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_TodosEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
-            this.Direccion,
-            this.Email,
-            this.Telefono,
-            this.FechaNac,
-            this.FechaHireDate,
-            this.Usuario,
-            this.Contrasenna});
             this.dgv_TodosEmpleados.Location = new System.Drawing.Point(33, 288);
             this.dgv_TodosEmpleados.Name = "dgv_TodosEmpleados";
             this.dgv_TodosEmpleados.Size = new System.Drawing.Size(878, 168);
             this.dgv_TodosEmpleados.TabIndex = 18;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.HeaderText = "Fecha de Nacimiento";
-            this.FechaNac.Name = "FechaNac";
-            // 
-            // FechaHireDate
-            // 
-            this.FechaHireDate.HeaderText = "Fecha de Contratacion ";
-            this.FechaHireDate.Name = "FechaHireDate";
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            // 
-            // Contrasenna
-            // 
-            this.Contrasenna.HeaderText = "Contraseña";
-            this.Contrasenna.Name = "Contrasenna";
             // 
             // FrmEmpleado
             // 
@@ -333,14 +269,5 @@
         private System.Windows.Forms.TextBox txt_Usuario;
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.DataGridView dgv_TodosEmpleados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHireDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenna;
     }
 }

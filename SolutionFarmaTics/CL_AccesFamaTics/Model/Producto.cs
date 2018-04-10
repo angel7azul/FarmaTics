@@ -26,11 +26,12 @@ namespace CL_AccesFamaTics.Model
         public decimal Precio { get; set; }
         public System.DateTime Caducidad { get; set; }
         public string CodigoBarras { get; set; }
-        public int CategoriaId { get; set; }
+        public string Categoria { get; set; }
         public int Stock { get; set; }
         public string Laboratorio { get; set; }
+        public string Presentacion { get; set; }
+        public Nullable<bool> IsGeneric { get; set; }
     
-        public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleVenta> DetalleVentas { get; set; }
     }

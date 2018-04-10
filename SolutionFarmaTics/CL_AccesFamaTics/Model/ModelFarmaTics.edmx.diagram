@@ -4,19 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="604bc21304614151a4c3c03792e96004" Name="Diagram1">
-        <EntityTypeShape EntityType="FARMATICSModel.Categoria" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+      <Diagram DiagramId="604bc21304614151a4c3c03792e96004" Name="Diagram1" ZoomLevel="120">
         <EntityTypeShape EntityType="FARMATICSModel.Cliente" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FARMATICSModel.DetalleVenta" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FARMATICSModel.Empleado" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FARMATICSModel.Producto" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FARMATICSModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FARMATICSModel.Venta" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="FARMATICSModel.FK_Producto_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="FARMATICSModel.FK_Venta_Cliente" ManuallyRouted="false" />
-        <AssociationConnector Association="FARMATICSModel.FK_DetalleVenta_Producto" ManuallyRouted="false" />
         <AssociationConnector Association="FARMATICSModel.FK_DetalleVenta_Venta" ManuallyRouted="false" />
         <AssociationConnector Association="FARMATICSModel.FK_Venta_Empleado" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FARMATICSModel.Producto" Width="1.5" PointX="5.375" PointY="5" />
+        <AssociationConnector Association="FARMATICSModel.FK_DetalleVenta_Producto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

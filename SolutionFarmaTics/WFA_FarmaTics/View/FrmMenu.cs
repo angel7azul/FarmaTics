@@ -47,5 +47,17 @@ namespace WFA_FarmaTics.View
             FrmCliente c = new FrmCliente();
             c.ShowDialog();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMenuContextual cl = new FrmMenuContextual();
+            cl.ShowDialog();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProducto p = new FrmProducto();
+            p.ShowDialog();
+        }
     }
 }

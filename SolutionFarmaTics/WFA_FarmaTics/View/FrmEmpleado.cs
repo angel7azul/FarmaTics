@@ -23,32 +23,44 @@ namespace WFA_FarmaTics.View
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            emp = new Empleado
+            if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_Direccion.Text))
             {
-                Nombre = txt_Nombre.Text,
-                Telefono = txt_Telefono.Text,
-                Direccion = txt_Direccion.Text,
-                Email = txt_Email.Text,
-                Usuario = txt_Usuario.Text,
-                Contraseña = txt_Contra.Text,
-                FechaNacimiento = dtp_FechaNac.Value,
-                FechaContratacion = dtp_FechaContratacion.Value
-            };
-            _controller.Agregar(emp);
-            _controller.Guardar();
-            MessageBox.Show("Empleado Agregado con Exito!");
+                MessageBox.Show("Ingresa Datos", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                if (MessageBox.Show("¿Desea Agregar un Empleado?", "Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    emp = new Empleado
+                    {
+                        Nombre = txt_Nombre.Text,
+                        Telefono = txt_Telefono.Text,
+                        Direccion = txt_Direccion.Text,
+                        Email = txt_Email.Text,
+                        Usuario = txt_Usuario.Text,
+                        Contraseña = txt_Contra.Text,
+                        FechaNacimiento = dtp_FechaNac.Value,
+                        FechaContratacion = dtp_FechaContratacion.Value
+                    };
+                    _controller.Agregar(emp);
+                    _controller.Guardar();
+                    MessageBox.Show("Empleado Agregado con Exito!");
+                }
+            }
         }
 
         private void FrmEmpleado_Load(object sender, EventArgs e)
         {
             var empleados = _controller.BuscarTodosLosEmpleados();
 
-            foreach(var emp in empleados)
-            {
-                dgv_TodosEmpleados.Rows.Add(emp.Id, emp.Nombre, emp.Direccion,emp.Email,emp.Telefono,emp.FechaContratacion.ToShortDateString(),emp.FechaNacimiento.Value.ToShortDateString(),emp.Usuario,emp.Contraseña);
-            }
+            dgv_TodosEmpleados.DataSource = empleados;
 
-            dgv_TodosEmpleados.AllowUserToAddRows = false;
+            //foreach(var emp in empleados)
+            //{
+            //    dgv_TodosEmpleados.Rows.Add(emp.Id, emp.Nombre, emp.Direccion,emp.Email,emp.Telefono,emp.FechaContratacion.ToShortDateString(),emp.FechaNacimiento.Value.ToShortDateString(),emp.Usuario,emp.Contraseña);
+            //}
+
+            //dgv_TodosEmpleados.AllowUserToAddRows = false;
         }
     }
 }

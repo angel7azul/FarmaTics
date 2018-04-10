@@ -23,27 +23,32 @@ namespace WFA_FarmaTics.View
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            c = new Cliente
+            if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_Direccion.Text))
             {
-                Nombre = txt_Nombre.Text,
-                Direccion = txt_Direccion.Text,
-                Telefono = txt_Telefono.Text,
-                Email = txt_Email.Text,
-                FechaDeRegistro = dtp_FechaRegistro.Value
-            };
-
-            _controller.Agregar(c);
-            _controller.Guardar();
-            MessageBox.Show("Cliente Agregado!!");
+                MessageBox.Show("Ingresa Datos", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                if (MessageBox.Show("¿Desea Agregar un Cliente?", "Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    c = new Cliente
+                    {
+                        Nombre = txt_Nombre.Text,
+                        Direccion = txt_Direccion.Text,
+                        Telefono = txt_Telefono.Text,
+                        Email = txt_Email.Text,
+                        FechaDeRegistro = dtp_FechaRegistro.Value
+                    };
+                    _controller.Agregar(c);
+                    MessageBox.Show("Cliente Agregado!!");
+                }
+            }
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             var clientes = _controller.ObtenerTodosLosClientes();
-            foreach (var c in clientes)
-            {
-                dgv_Clientes.Rows.Add(c.Id, c.Nombre, c.Direccion, c.Telefono, c.Email, c.FechaDeRegistro.Value.ToShortDateString());
-            }
+            dgv_Clientes.DataSource = clientes;
         }
     }
 }

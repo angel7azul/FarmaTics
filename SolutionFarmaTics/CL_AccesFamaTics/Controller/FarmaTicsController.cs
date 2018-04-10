@@ -82,10 +82,10 @@ namespace CL_AccesFamaTics.Controller
         }
 
         //Listar todos los productos que pertenecen a una categoria
-        public List<Producto> ObtenerProductosPorCategoria(string cat)
-        {
-            return repository.GetProductsByCategoryName(cat).ToList();
-        }
+        //public List<Producto> ObtenerProductosPorCategoria(string cat)
+        //{
+        //    return repository.GetProductsByCategoryName(cat).ToList();
+        //}
 
         //Lista de los nombres de productos que caducan este mes
         public List<dynamic> ObtenerProductosCaducados()
@@ -94,10 +94,10 @@ namespace CL_AccesFamaTics.Controller
         }
 
         //Productos con su nombre mediante su presentacion
-        public List<dynamic> ObtenerProductosPorPresentacion(string nomP)
-        {
-            return repository.GetProductByPresentation(nomP).ToList();
-        }
+        //public List<dynamic> ObtenerProductosPorPresentacion(string nomP)
+        //{
+        //    return repository.GetProductByPresentation(nomP).ToList();
+        //}
 
         //Cuantos Productos con menos de 10 existencias y su nombre
         public List<dynamic> ProductosDisponibles()
@@ -210,29 +210,29 @@ namespace CL_AccesFamaTics.Controller
 
         #endregion
 
-        #region Categoria
+        //#region Categoria
 
-        public List<Categoria> TodasLasCategorias()
-        {
-            return repository.GetallCategory().ToList();
-        }
+        //public List<Categoria> TodasLasCategorias()
+        //{
+        //    return repository.GetallCategory().ToList();
+        //}
 
-        public Categoria CategoriaPorID(int id)
-        {
-            return repository.GetCategoryById(id);
-        }
+        //public Categoria CategoriaPorID(int id)
+        //{
+        //    return repository.GetCategoryById(id);
+        //}
 
-        public void Agregar(Categoria cat)
-        {
-            repository.Add(cat);
-        }
+        //public void Agregar(Categoria cat)
+        //{
+        //    repository.Add(cat);
+        //}
 
-        public void Eliminar(Categoria cat)
-        {
-            repository.Delete(cat);
-        }
+        //public void Eliminar(Categoria cat)
+        //{
+        //    repository.Delete(cat);
+        //}
 
-        #endregion
+        //#endregion
 
         public void Guardar()
         {

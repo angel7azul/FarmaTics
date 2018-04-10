@@ -88,13 +88,13 @@ namespace CL_AccesFamaTics.Model
             Save();
         }
         //Listar todos los productos que pertenecen a una categoria
-        public IQueryable<Producto> GetProductsByCategoryName(string nomCat)
-        {
-            var query = from p in db.Productos
-                        where p.Categoria.Nombre == nomCat
-                        select p;
-            return query;
-        }
+        //public IQueryable<Producto> GetProductsByCategoryName(string nomCat)
+        //{
+        //    var query = from p in db.Productos
+        //                where p.Categoria.Nombre == nomCat
+        //                select p;
+        //    return query;
+        //}
         //Lista de los nombres de productos que caducan este mes
         public List<dynamic>  GetProductsCaducados()
         {
@@ -104,10 +104,10 @@ namespace CL_AccesFamaTics.Model
             return query.ToList<dynamic>();
         }
         //Productos con su nombre mediante su presentacion
-        public IQueryable<dynamic> GetProductByPresentation(string nom)
-        {
-            return db.Productos.Where(p => p.Nombre.Equals(nom)&&p.Stock>10).Select(p => new { Nombre = p.Nombre,Presentacion = p.Categoria.Presentacion });
-        }
+        //public IQueryable<dynamic> GetProductByPresentation(string nom)
+        //{
+        //    return db.Productos.Where(p => p.Nombre.Equals(nom)&&p.Stock>10).Select(p => new { Nombre = p.Nombre,Presentacion = p.Categoria.Presentacion });
+        //}
         //Cuantos Productos con menos de 10 existencias y su nombre
         public IQueryable<dynamic> ProductsByAvaliable()
         {
@@ -222,27 +222,27 @@ namespace CL_AccesFamaTics.Model
         }
         #endregion
 
-        #region Categoria
-        public IQueryable<Categoria> GetallCategory()
-        {
-            return db.Categorias;
-        }
+        //#region Categoria
+        //public IQueryable<Categoria> GetallCategory()
+        //{
+        //    return db.Categorias;
+        //}
 
-        public Categoria GetCategoryById(int id)
-        {
-            return db.Categorias.Find(id);
-        }
-        public void Add(Categoria np)
-        {
-            db.Categorias.Add(np);
-            Save();
-        }
-        public void Delete(Categoria np)
-        {
-            db.Categorias.Remove(np);
-            Save();
-        }
-        #endregion
+        //public Categoria GetCategoryById(int id)
+        //{
+        //    return db.Categorias.Find(id);
+        //}
+        //public void Add(Categoria np)
+        //{
+        //    db.Categorias.Add(np);
+        //    Save();
+        //}
+        //public void Delete(Categoria np)
+        //{
+        //    db.Categorias.Remove(np);
+        //    Save();
+        //}
+        //#endregion
 
         public void Save()
         {

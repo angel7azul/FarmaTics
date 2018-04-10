@@ -58,6 +58,12 @@
     <Compile Include="View\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmDetalleCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDetalleCliente.Designer.cs">
+      <DependentUpon>FrmDetalleCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,24 @@
     <Compile Include="View\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmMenuContextual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMenuContextual.Designer.cs">
+      <DependentUpon>FrmMenuContextual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmVenta.Designer.cs">
+      <DependentUpon>FrmVenta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -91,6 +115,9 @@
     <EmbeddedResource Include="View\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDetalleCliente.resx">
+      <DependentUpon>FrmDetalleCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,8 +127,19 @@
     <EmbeddedResource Include="View\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMenuContextual.resx">
+      <DependentUpon>FrmMenuContextual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmVenta.resx">
+      <DependentUpon>FrmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CL_AccesFamaTics.Model.Cliente.datasource" />
     <None Include="Properties\DataSources\CL_AccesFamaTics.Model.Empleado.datasource" />
+    <None Include="Properties\DataSources\CL_AccesFamaTics.Model.Producto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

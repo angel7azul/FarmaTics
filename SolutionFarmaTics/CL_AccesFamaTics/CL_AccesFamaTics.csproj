@@ -50,9 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\FarmaTicsController.cs" />
-    <Compile Include="Model\Categoria.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Cliente.cs">
       <DependentUpon>ModelFarmaTics.tt</DependentUpon>
     </Compile>

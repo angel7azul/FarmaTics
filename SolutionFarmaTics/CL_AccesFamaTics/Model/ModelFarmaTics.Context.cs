@@ -25,12 +25,11 @@ namespace CL_AccesFamaTics.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Categoria> Categorias { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<DetalleVenta> DetalleVentas { get; set; }
         public virtual DbSet<Empleado> Empleados { get; set; }
-        public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
     }
 }
