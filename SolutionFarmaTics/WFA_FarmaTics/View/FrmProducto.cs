@@ -41,7 +41,7 @@ namespace WFA_FarmaTics.View
                     Stock = Convert.ToInt32(txtStock.Text),
                     Laboratorio = txtLaboratorio.Text,
                     Presentacion = txtPresentacion.Text,
-                    IsGeneric = IsGeneric
+                    IsGenerico = Convert.ToBoolean(cbxGeneric.Text)
                 };
                 _controller.Agregar(P);
                 MessageBox.Show("Dato Agregado");

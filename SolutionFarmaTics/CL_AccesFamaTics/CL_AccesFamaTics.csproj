@@ -51,64 +51,63 @@
   <ItemGroup>
     <Compile Include="Controller\FarmaTicsController.cs" />
     <Compile Include="Model\Cliente.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DetalleVenta.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Empleado.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FarmaticsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmaticsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FarmaticsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FarmaticsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmaticsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\FarmaTicsRepository.cs" />
-    <Compile Include="Model\ModelFarmaTics.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelFarmaTics.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ModelFarmaTics.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ModelFarmaTics.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelFarmaTics.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Producto.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Venta.cs">
-      <DependentUpon>ModelFarmaTics.tt</DependentUpon>
+      <DependentUpon>FarmaticsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
-    <EntityDeploy Include="Model\ModelFarmaTics.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelFarmaTics.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model\ModelFarmaTics.edmx.diagram">
-      <DependentUpon>ModelFarmaTics.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
+    <Content Include="Model\FarmaticsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FarmaticsModel.edmx</DependentUpon>
+      <LastGenOutput>FarmaticsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\FarmaticsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FarmaticsModel.edmx</DependentUpon>
+      <LastGenOutput>FarmaticsModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\ModelFarmaTics.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelFarmaTics.edmx</DependentUpon>
-      <LastGenOutput>ModelFarmaTics.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\ModelFarmaTics.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelFarmaTics.edmx</DependentUpon>
-      <LastGenOutput>ModelFarmaTics.cs</LastGenOutput>
-    </Content>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model\FarmaticsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FarmaticsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\FarmaticsModel.edmx.diagram">
+      <DependentUpon>FarmaticsModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

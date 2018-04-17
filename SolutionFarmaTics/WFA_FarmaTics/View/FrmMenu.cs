@@ -59,5 +59,11 @@ namespace WFA_FarmaTics.View
             FrmProducto p = new FrmProducto();
             p.ShowDialog();
         }
+
+        private void realizarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var venta = new FrmVenta(us);
+            venta.ShowDialog();            
+        }
     }
 }

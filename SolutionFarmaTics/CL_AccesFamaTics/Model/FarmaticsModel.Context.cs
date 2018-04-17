@@ -13,10 +13,10 @@ namespace CL_AccesFamaTics.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FARMATICSEntities : DbContext
+    public partial class FARMATICSEntities1 : DbContext
     {
-        public FARMATICSEntities()
-            : base("name=FARMATICSEntities")
+        public FARMATICSEntities1()
+            : base("name=FARMATICSEntities1")
         {
         }
     
@@ -28,8 +28,8 @@ namespace CL_AccesFamaTics.Model
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<DetalleVenta> DetalleVentas { get; set; }
         public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
-        public virtual DbSet<Producto> Productos { get; set; }
     }
 }

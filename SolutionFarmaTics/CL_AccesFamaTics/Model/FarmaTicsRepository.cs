@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace CL_AccesFamaTics.Model
 {
-    public class FarmaTicsRepository
+    public class FarmaTicsRepository:IDisposable
     {
         //Aplicacion pro GitHub
-        private readonly FARMATICSEntities db = new FARMATICSEntities();
+        public FARMATICSEntities1 db;
+
+        public FarmaTicsRepository()
+        {
+            db = new FARMATICSEntities1();
+        }
+        //Constructor para la transaccion :D
+        public FarmaTicsRepository(FARMATICSEntities1 context)
+        {
+            db = context;
+        }
 
         #region Cliente
         public IQueryable<Cliente> GetAllClientes()
@@ -252,6 +262,11 @@ namespace CL_AccesFamaTics.Model
         public void Save()
         {
             db.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

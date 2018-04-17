@@ -17,7 +17,7 @@ namespace WFA_FarmaTics
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVenta());
+            Application.Run(new FRM_Login());
         }
     }
 }

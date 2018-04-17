@@ -19,7 +19,7 @@ namespace CL_AccesFamaTics.Model
         public int ProductoId { get; set; }
         public int Cantidad { get; set; }
     
-        public virtual Venta Venta { get; set; }
         public virtual Producto Producto { get; set; }
+        public virtual Venta Venta { get; set; }
     }
 }

@@ -9,8 +9,17 @@ namespace CL_AccesFamaTics.Controller
 {
     public class FarmaTicsController
     {
-        private readonly FarmaTicsRepository repository = new FarmaTicsRepository();
+        public FarmaTicsRepository repository;
 
+        public FarmaTicsController()
+        {
+            repository = new FarmaTicsRepository();
+        }
+        //Constructor para realizar la Transaccion
+        public FarmaTicsController(FARMATICSEntities1 db)
+        {
+            repository = new FarmaTicsRepository(db);
+        }
         //todos los metodos publicos,cualquiere interface o iqueryable seran listas, si lo son se respeta el tipo de dato
         
             //Cliente Terminado
@@ -191,7 +200,7 @@ namespace CL_AccesFamaTics.Controller
         //LOGIN
         public Empleado Login(string pass, string user)
         {
-            return repository.Login(user, pass);
+            return repository.Login(pass, user);
         }
 
         //Dar regalo a los que cumplan años este mes nombre y telefono
